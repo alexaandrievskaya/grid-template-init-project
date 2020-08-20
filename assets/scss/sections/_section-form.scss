@@ -2,9 +2,17 @@
   padding: ($gap / 2 * 3) 0;
   background-color: $color-primary;
 
+  &-item:nth-of-type(1) {
+    @include md-sm {
+      grid-column: 1 / span 2;
+    }
+
+  }
+
   &__container {
     display: grid;
     grid-gap: $gap;
+    /*grid-template-columns: 1fr 1fr;*/
 
     @extend %container;
     @include lg-min {
@@ -16,6 +24,9 @@
     @include md-sm {
       grid-template-columns: 1fr 1fr;
     }
+    /*@include sm {
+      grid-template-columns: 1fr 1fr;
+    }*/
   }
 
   &-item__input {
@@ -31,6 +42,11 @@
     border-bottom-color: rgba($color-light, 0.25);
     background-color: rgba($color-light, 0.05);
     font-size: 1.125rem;
+
+    &::placeholder,
+    &::placeholder {
+      color: $color-gray;
+    }
 
     &:hover,
     &:focus {

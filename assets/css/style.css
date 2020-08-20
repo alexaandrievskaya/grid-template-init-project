@@ -478,12 +478,16 @@ template {
 html {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  line-height: 1.15;
   overflow-y: scroll;
   color: #637588;
 }
 
 h1 {
+  letter-spacing: 0.08em;
   font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  line-height: 1.2em;
 }
 
 a {
@@ -494,26 +498,25 @@ a {
 .btn-accent,
 .btn {
   display: block;
-  min-width: 250px;
-  -webkit-transition: background-color 0.5s;
-  -o-transition: background-color 0.5s;
-  transition: background-color 0.5s;
+  height: 60px;
+  padding: 18px 20px;
+  -webkit-transition: background-color 0.5s, border-color 0.5s;
+  -o-transition: background-color 0.5s, border-color 0.5s;
+  transition: background-color 0.5s, border-color 0.5s;
   text-align: center;
   letter-spacing: 0.1em;
-  border: 2px solid #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
+  border-width: 2px;
+  border-style: solid;
+  font-size: 1.125rem;
 }
 
 .btn-accent {
-  height: 60px;
-  padding: 18px 20px;
-  font-size: 1.25rem;
-  border: 2px solid #2d3651;
+  border-color: #2d3651;
   background-color: rgba(45, 54, 81, 0.8);
 }
 
 .btn {
-  border: 2px solid #ffffff;
+  border-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -709,10 +712,7 @@ a {
 }
 
 .header-content__tittle {
-  font-weight: 300;
-  line-height: 1.2;
   text-align: center;
-  letter-spacing: .08em;
   color: #ffffff;
 }
 
@@ -919,6 +919,10 @@ p {
 .form__container {
   display: grid;
   grid-gap: 20px;
+  /*grid-template-columns: 1fr 1fr;*/
+  /*@include sm {
+      grid-template-columns: 1fr 1fr;
+    }*/
 }
 
 .form-item__input {
@@ -936,6 +940,26 @@ p {
   border-bottom-color: rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.05);
   font-size: 1.125rem;
+}
+
+.form-item__input::-webkit-input-placeholder, .form-item__input::-webkit-input-placeholder {
+  color: #637588;
+}
+
+.form-item__input::-moz-placeholder, .form-item__input::-moz-placeholder {
+  color: #637588;
+}
+
+.form-item__input:-ms-input-placeholder, .form-item__input:-ms-input-placeholder {
+  color: #637588;
+}
+
+.form-item__input::-ms-input-placeholder, .form-item__input::-ms-input-placeholder {
+  color: #637588;
+}
+
+.form-item__input::placeholder, .form-item__input::placeholder {
+  color: #637588;
 }
 
 .form-item__input:hover, .form-item__input:focus {
@@ -1201,14 +1225,14 @@ p {
 }
 
 @media (min-width: 992px) {
-  .btn {
-    min-width: 250px;
-    height: 60px;
-    padding: 18px 20px;
-    font-size: 1.25rem;
+  h1 {
+    font-size: 3.75rem;
   }
   .header-content__tittle {
     margin: 0 0 53px 0;
+  }
+  .header-content__buttons .btn {
+    min-width: 250px;
   }
   .skills__container {
     grid-gap: 10px;
@@ -1246,12 +1270,6 @@ p {
   }
 }
 
-@media (max-width: 991.8px) {
-  h1 {
-    font-size: 3.75rem;
-  }
-}
-
 @media (max-width: 991px) and (min-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -1263,6 +1281,17 @@ p {
   }
   .header-content__tittle {
     margin: 0 0 43px 0;
+  }
+  .header-content__buttons .btn {
+    min-width: 200px;
+    height: 50px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+  }
+  .header-content__buttons .btn:first-of-type {
+    margin-right: 20px;
   }
   .skills__container {
     grid-gap: 10px;
@@ -1298,6 +1327,14 @@ p {
 }
 
 @media (max-width: 767.8px) and (min-width: 576px) {
+  .header-content__buttons .btn {
+    min-width: 170px;
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+  }
   .skills__container {
     grid-gap: 10px;
     grid-template-areas: 'a1 a2' 'a3 a2' 'a4 a4' 'a5 a6' 'a5 a7' 'a8 a9';
@@ -1313,6 +1350,9 @@ p {
   h2 {
     margin-bottom: 36px;
     font-size: 1.5rem;
+  }
+  .form-item:nth-of-type(1) {
+    grid-column: 1 / span 2;
   }
   .form__container {
     grid-template-columns: 1fr 1fr;

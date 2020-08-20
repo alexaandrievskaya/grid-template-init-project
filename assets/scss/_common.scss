@@ -5,6 +5,7 @@
 html {
   font-family: $font-main;
   font-size: $font-size;
+  line-height: 1.15;
 
   overflow-y: scroll;
 
@@ -33,9 +34,12 @@ html {
 }
 
 h1 {
+  letter-spacing: 0.08em;
   font-family: $font-header;
+  font-weight: 300;
+  line-height: 1.2em;
 
-  @include lg {
+  @include lg-min {
     font-size: 3.75rem;
   };
   @include lg-md {
@@ -61,23 +65,21 @@ a {
 .btn-accent,
 .btn {
   display: block;
+  height: 60px;
+  padding: 18px $gap;
 
-  min-width: 250px;
-
-  transition: background-color 0.5s;
+  transition: background-color 0.5s, border-color 0.5s;
   text-align: center;
   letter-spacing: 0.1em;
 
-  border: 2px solid $color-light;
-  background-color: rgba(255, 255, 255, 0.1);
+  border-width: 2px;
+  border-style: solid;
+  font-size: 1.125rem;
 }
 
 .btn-accent {
-  height: 60px;
-  padding: 18px $gap;
-  font-size: 1.25rem;
 
-  border: 2px solid $color-primary;
+  border-color: $color-primary;
   background-color: rgba($color-primary, 0.8);
   @include sm-min {
     min-width: 350px;
@@ -88,15 +90,9 @@ a {
 }
 
 .btn {
-  border: 2px solid $color-light;
-  background-color: rgba($color-light, .1);
+  border-color: $color-light;
+  background-color: rgba($color-light, 0.1);
 
-  @include lg-min {
-    min-width: 250px;
-    height: 60px;
-    padding: 18px $gap;
-    font-size: 1.25rem;
-  }
   @include lg-md {
     min-width: 200px;
     height: 50px;
