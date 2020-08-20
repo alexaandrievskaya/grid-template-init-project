@@ -14,7 +14,9 @@
 @import "header/header-navbar";
 @import "header/header-content";
 
-@import "sections/section-skills";
+@import "sections/section-skills/skills";
+@import "sections/section-skills/skill-item";
+@import "sections/section-skills/skills-item-nth";
 @import "sections/section-about";
 @import "sections/section-form";
 @import "sections/section-posts";
