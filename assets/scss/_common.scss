@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-main;
+  font-size: $font-size;
+
+  overflow-y: scroll;
+
+  color: $color-gray;
+}
+
+@mixin lg-min {
+  @media (min-width: $lg)
+  {
+    @content;
+  }
+}
+
+@mixin lg-md {
+  @media (max-width: $lg - 1px) and (min-width: $md)
+  {
+    @content
+  }
+}
+
+@mixin md {
+  @media (max-width: $md - 1px)
+  {
+    @content
+  }
+}
+
+h1 {
+  font-family: $font-header;
+
+  @include lg {
+    font-size: 3.75rem;
+  };
+  @include lg-md {
+    font-size: 2.5rem;
+  };
+  @include md {
+    font-size: 1.875rem;
+  };
+}
+
+
+
+
+
+a {
+  text-decoration: none;
+
+  color: $color-light;
+}
+
+
+
+.btn-accent,
+.btn {
+  display: block;
+
+  min-width: 250px;
+
+  transition: background-color 0.5s;
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  border: 2px solid $color-light;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-accent {
+  height: 60px;
+  padding: 18px $gap;
+  font-size: 1.25rem;
+
+  border: 2px solid $color-primary;
+  background-color: rgba($color-primary, 0.8);
+  @include sm-min {
+    min-width: 350px;
+  }
+  @include sm {
+    width: 100%;
+  }
+}
+
+.btn {
+  border: 2px solid $color-light;
+  background-color: rgba($color-light, .1);
+
+  @include lg-min {
+    min-width: 250px;
+    height: 60px;
+    padding: 18px $gap;
+    font-size: 1.25rem;
+  }
+  @include lg-md {
+    min-width: 200px;
+    height: 50px;
+    padding: 14px $gap;
+  }
+  @include md {
+    min-width: 170px;
+    height: 40px;
+    padding: 10px $gap;
+    letter-spacing: 0.05em;
+  }
+}
+
+.btn-accent:hover,
+.btn-accent:focus,
+.btn:hover,
+.btn:focus {
+  background-color: $color-accent;
+}
