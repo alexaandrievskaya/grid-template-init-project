@@ -1,0 +1,65 @@
+.form {
+  padding: ($gap / 2 * 3) 0;
+  background-color: $color-primary;
+
+  &__container {
+    display: grid;
+    grid-gap: $gap;
+
+    @extend %container;
+    @include lg-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &-item__input {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding-right: $gap / 2 * 3;
+    padding-left: $gap / 2 * 3;
+    transition: background-color 0.5s, border-color 0.5s;
+    letter-spacing: 0.15em;
+    color: $color-light;
+    border: 2px solid rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.25);
+    background-color: rgba($color-light, 0.05);
+    font-size: 1.125rem;
+
+    &:hover,
+    &:focus {
+      border-color: rgba($color-light, 0.15);
+      border-bottom-color: $color-light;
+      background-color: rgba($color-light, 0.15);
+    }
+  }
+
+  .btn-accent {
+    width: 100%;
+    color: $color-light;
+    border-color: rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.2);
+    background-color: rgba($color-light, 0.1);
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      border-color: $color-light;
+      background-color: $color-accent;
+    }
+  }
+}
+
+input {
+  overflow: visible;
+
+  &:focus {
+    outline: none;
+  }
+}
