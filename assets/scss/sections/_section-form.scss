@@ -43,7 +43,7 @@
     background-color: rgba($color-light, 0.05);
     font-size: 1.125rem;
 
-    &::placeholder,
+
     &::placeholder {
       color: $color-gray;
     }
@@ -53,6 +53,10 @@
       border-color: rgba($color-light, 0.15);
       border-bottom-color: $color-light;
       background-color: rgba($color-light, 0.15);
+
+      &::placeholder {
+        color: #8c9bab;
+      }
     }
   }
 

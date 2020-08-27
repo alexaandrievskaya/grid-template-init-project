@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 html {
   font-family: $font-main;
   font-size: $font-size;
@@ -50,8 +54,11 @@ h1 {
   };
 }
 
-
-
+h3 {
+  letter-spacing: 0.05em;
+  font-size: 1.125rem;
+  color: $color-gray;
+}
 
 
 a {

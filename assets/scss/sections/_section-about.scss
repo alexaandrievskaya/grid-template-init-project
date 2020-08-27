@@ -1,9 +1,21 @@
 .about {
   letter-spacing: 0.055em;
   background-color: $color-gray-light;
-  padding-top: 100px;
-  padding-bottom: 100px;
 
+  @include lg-min {
+    padding-top: $gap * 5;
+    padding-bottom: $gap * 5;
+  }
+
+  @include lg-md {
+    padding-top: $gap * 4;
+    padding-bottom: $gap * 4;
+  }
+
+  @include md {
+    padding-top: $gap * 3;
+    padding-bottom: $gap * 3;
+  }
 
   &__container {
     display: grid;
@@ -11,19 +23,19 @@
 
     @include lg-min {
       grid-template-columns: 1fr 271px;
-      grid-gap: 100px;
+      grid-gap: $gap * 5;
     }
     @include lg-md {
-      grid-gap: 40px;
+      grid-gap: $gap * 2;
       grid-template-columns: 1fr 271px;
     }
     @include md-sm {
-      grid-gap: 20px;
+      grid-gap: $gap;
       grid-template-columns: 1fr 236px;
     }
 
     @include sm {
-      grid-gap: 20px;
+      grid-gap: $gap;
       grid-template-columns: 1fr;
     }
   }
