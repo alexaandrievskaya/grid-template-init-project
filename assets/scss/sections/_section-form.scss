@@ -6,15 +6,18 @@
     @include md-sm {
       grid-column: 1 / span 2;
     }
+    @include sm {
+      grid-column: 1 / span 2;
+    }
 
   }
 
   &__container {
     display: grid;
     grid-gap: $gap;
-    /*grid-template-columns: 1fr 1fr;*/
 
     @extend %container;
+
     @include lg-min {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -24,9 +27,9 @@
     @include md-sm {
       grid-template-columns: 1fr 1fr;
     }
-    /*@include sm {
+    @include sm {
       grid-template-columns: 1fr 1fr;
-    }*/
+    }
   }
 
   &-item__input {
@@ -55,13 +58,18 @@
       background-color: rgba($color-light, 0.15);
 
       &::placeholder {
-        color: #8c9bab;
+        color: $color-gray-lighter;
       }
     }
   }
 
-  .btn-accent {
+  .btn-accent-form {
     width: 100%;
+    display: block;
+    height: 60px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-size: 1.125rem;
     color: $color-light;
     border-color: rgba($color-light, 0);
     border-bottom-color: rgba($color-light, 0.2);

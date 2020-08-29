@@ -926,10 +926,6 @@ p {
 .form__container {
   display: grid;
   grid-gap: 20px;
-  /*grid-template-columns: 1fr 1fr;*/
-  /*@include sm {
-      grid-template-columns: 1fr 1fr;
-    }*/
 }
 
 .form-item__input {
@@ -995,15 +991,20 @@ p {
   color: #8c9bab;
 }
 
-.form .btn-accent {
+.form .btn-accent-form {
   width: 100%;
+  display: block;
+  height: 60px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-size: 1.125rem;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
   border-bottom-color: rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.form .btn-accent:hover, .form .btn-accent:focus {
+.form .btn-accent-form:hover, .form .btn-accent-form:focus {
   cursor: pointer;
   border-color: #ffffff;
   background-color: #d66926;
@@ -1474,6 +1475,12 @@ p {
     margin-bottom: 36px;
     text-align: center;
     font-size: 1.5rem;
+  }
+  .form-item:nth-of-type(1) {
+    grid-column: 1 / span 2;
+  }
+  .form__container {
+    grid-template-columns: 1fr 1fr;
   }
   .posts h2 {
     margin-bottom: 36px;
