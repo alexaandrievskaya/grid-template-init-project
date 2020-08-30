@@ -6,9 +6,6 @@
     @include md-sm {
       grid-column: 1 / span 2;
     }
-    @include sm {
-      grid-column: 1 / span 2;
-    }
 
   }
 
@@ -25,9 +22,6 @@
       grid-template-columns: repeat(3, 1fr);
     }
     @include md-sm {
-      grid-template-columns: 1fr 1fr;
-    }
-    @include sm {
       grid-template-columns: 1fr 1fr;
     }
   }
